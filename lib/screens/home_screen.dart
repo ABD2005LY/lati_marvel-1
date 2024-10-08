@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:lati_marvel/providers/darkModeProvider.dart';
-import 'package:lati_marvel/providers/moviesProvider.dart';
-import 'package:lati_marvel/widgets/cards/movieCard.dart';
-import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:lati_marvel/widget/card.dart';
+import 'package:lati_marvel/providers/moviesProvider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,8 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer2<MoviesProvider, DarkModeProvider>(
-        builder: (context, moviesConsumer, darkModeConsumer, child) {
+    return Consumer<MoviesProvider>(builder: (context, moviesConsumer, child) {
       return Scaffold(
           appBar: AppBar(
             title: Image.asset(

@@ -1,14 +1,14 @@
 import 'dart:convert';
 
-class MovieModel {
+class MoviesModel {
   int id;
   String title;
   DateTime releaseDate;
   String boxOffice;
   int duration;
-  String overview;
+  String? overview;
   String coverUrl;
-  String trailerUrl;
+  String? trailerUrl;
   String directedBy;
   int phase;
   String saga;
@@ -17,15 +17,15 @@ class MovieModel {
   String imdbId;
   DateTime updatedAt;
 
-  MovieModel({
+  MoviesModel({
     required this.id,
     required this.title,
     required this.releaseDate,
     required this.boxOffice,
     required this.duration,
-    required this.overview,
+    this.overview,
     required this.coverUrl,
-    required this.trailerUrl,
+    this.trailerUrl,
     required this.directedBy,
     required this.phase,
     required this.saga,
@@ -35,12 +35,12 @@ class MovieModel {
     required this.updatedAt,
   });
 
-  factory MovieModel.fromRawJson(String str) =>
-      MovieModel.fromJson(json.decode(str));
+  factory MoviesModel.fromRawJson(String str) =>
+      MoviesModel.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
+  factory MoviesModel.fromJson(Map<String, dynamic> json) => MoviesModel(
         id: json["id"],
         title: json["title"],
         releaseDate: DateTime.parse(json["release_date"]),

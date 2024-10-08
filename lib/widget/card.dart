@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lati_marvel/models/movie_model.dart';
 
-
-CustomGridTile(MovieModel moviesModel) {
+CustomGridTile(MoviesModel moviesModel) {
   return Container(
     decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
@@ -41,7 +40,7 @@ CustomGridTile(MovieModel moviesModel) {
   );
 }
 
-CustomStack(MovieModel moviesModel) {
+CustomStack(MoviesModel moviesModel) {
   return Container(
     decoration: BoxDecoration(
         gradient: LinearGradient(colors: [

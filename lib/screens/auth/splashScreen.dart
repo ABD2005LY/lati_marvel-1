@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:lati_marvel/helpers/const.dart';
+import 'package:lati_marvel/helpers/consts.dart';
 import 'package:lati_marvel/helpers/functions_helper.dart';
-import 'package:lati_marvel/screens/main_screens/home_screen.dart';
+import 'package:lati_marvel/screens/auth/regicter_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,9 +15,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-          context, CupertinoPageRoute(builder: (context) => HomeScreen()));
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(context,
+          CupertinoPageRoute(builder: (context) => const RegisterScreen()));
     });
     super.initState();
   }
@@ -27,11 +27,10 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: mainColor,
       body: Center(
-        child: Image.asset(
-          "assets/invertedLogo.png",
-          width: getSize(context).width * 0.8,
-        ),
-      ),
+          child: Image.asset(
+        "assets/marvelLogo.png",
+        width: getSize(context).width * 0.8,
+      )),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:convert';
-
-import 'package:lati_marvel/models/moviesModel.dart';
+import 'package:lati_marvel/models/movie_model.dart';
 import 'package:lati_marvel/providers/baseProvider.dart';
+
 
 class MoviesProvider extends BaseProvider {
   List<MoviesModel> Movies = [];
